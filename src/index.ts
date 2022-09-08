@@ -11,6 +11,8 @@ startButton.addEventListener("click", () => {
     };
     ndef.onreading = event => {
       log("NDEF message read.");
+      log(event.serialNumber);
+      log(event.message.records.join("\n"));
     };
   }).catch(error => {
     log(`Error! Scan failed to start: ${error}.`);
